@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <title>LanguageFlag - Beautiful Keyboard Layout Indicator for macOS</title>
+    <meta name="description"
+        content="Never lose track of your keyboard layout. LanguageFlag displays a beautiful flag indicator showing your active language.">
+    <link rel="canonical" href="https://your-domain.com/">
+    <link rel="icon" href="app-icon.png" type="image/png">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="LanguageFlag - Beautiful Keyboard Layout Indicator for macOS">
+    <meta property="og:description"
+        content="Never lose track of your keyboard layout. LanguageFlag displays a beautiful flag indicator showing your active language.">
+    <meta property="og:image" content="https://your-domain.com/app-icon.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LanguageFlag - Beautiful Keyboard Layout Indicator for macOS">
+    <meta name="twitter:description"
+        content="Never lose track of your keyboard layout. LanguageFlag displays a beautiful flag indicator showing your active language.">
+    <meta name="twitter:image" content="https://your-domain.com/app-icon.png">
+
+    <!-- Performance: preconnect + preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preload" as="image" href="app-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle-btn" aria-label="Switch to dark mode">
+        <span id="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+
+    <!-- Header -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg z-50 border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <img src="app-icon.png" alt="LanguageFlag" width="32" height="32" class="w-8 h-8 rounded-lg">
+                    <span class="text-xl font-bold text-gray-900">LanguageFlag</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-gray-900 transition">Features</a>
+                    <a href="#demo" class="text-gray-600 hover:text-gray-900 transition">Demo</a>
+                    <a href="#download"
+                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition">Download</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 via-white to-indigo-50">
+            <div class="max-w-6xl mx-auto text-center">
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+                    Never Lose Track of Your<br />
+                    <span class="gradient-text">Keyboard Layout</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Beautiful, minimal flag indicator that shows your active language layout on macOS.
+                    Perfect for multilingual users.
+                </p>
+
+                <!-- Visual Demo -->
+                <div class="flex justify-center items-center space-x-8 mb-12">
+                    <div class="text-center">
+                        <div class="bg-white rounded-2xl shadow-2xl p-8 mb-4">
+                            <span class="text-7xl flag-demo" aria-hidden="true">🇺🇸</span>
+                        </div>
+                        <p class="text-sm text-gray-500">English</p>
+                    </div>
+                    <div class="text-4xl text-gray-300" aria-hidden="true">→</div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-2xl shadow-2xl p-8 mb-4">
+                            <span class="text-7xl flag-demo" style="animation-delay: 0.3s;" aria-hidden="true">🇺🇦</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Ukrainian</p>
+                    </div>
+                    <div class="text-4xl text-gray-300" aria-hidden="true">→</div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-2xl shadow-2xl p-8 mb-4">
+                            <span class="text-7xl flag-demo" style="animation-delay: 0.6s;" aria-hidden="true">🇪🇸</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Spanish</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#download"
+                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition transform hover:scale-105">
+                        Download for macOS
+                    </a>
+                    <a href="#demo"
+                        class="bg-white text-gray-700 px-8 py-4 rounded-full text-lg font-semibold border-2 border-gray-200 hover:border-purple-600 transition">
+                        See It in Action
+                    </a>
+                </div>
+
+                <p class="text-sm text-gray-500 mt-6">macOS 12+ &#x2022; Free to try &#x2022; No credit card required</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Why <span class="gradient-text">LanguageFlag</span>?
+                    </h2>
+                    <p class="text-xl text-gray-600">Simple, beautiful, and powerful</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-5xl mb-4" aria-hidden="true">👁️</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Always Visible</h3>
+                        <p class="text-gray-600">See your active layout at a glance. Customizable position and size to fit
+                            your workflow.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-5xl mb-4" aria-hidden="true">⚡</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Lightning Fast</h3>
+                        <p class="text-gray-600">Instant updates when you switch layouts. Native macOS app with zero lag.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-5xl mb-4" aria-hidden="true">🎨</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Highly Customizable</h3>
+                        <p class="text-gray-600">Choose display duration, position, size, and animations. Make it yours.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-5xl mb-4" aria-hidden="true">🌍</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">All Languages</h3>
+                        <p class="text-gray-600">Supports every keyboard layout. Beautiful flag emojis for instant
+                            recognition.</p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-5xl mb-4" aria-hidden="true">🪶</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Lightweight</h3>
+                        <p class="text-gray-600">Minimal resource usage. Runs quietly in the background without draining
+                            battery.</p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-5xl mb-4" aria-hidden="true">🔒</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Privacy First</h3>
+                        <p class="text-gray-600">No tracking, no analytics, no internet required. Your data stays on your
+                            Mac.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo Section -->
+        <section id="demo" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-purple-50">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Try It Yourself
+                </h2>
+                <p class="text-xl text-gray-600 mb-12">Click a language to see LanguageFlag in action</p>
+
+                <!-- Language Selection Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button onclick="showFlag('flags/us.png', 'English', 'EN')"
+                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                        English
+                    </button>
+                    <button onclick="showFlag('flags/ukraine.png', 'Українська', 'UA')"
+                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                        Українська
+                    </button>
+                    <button onclick="showFlag('flags/spain.png', 'Español', 'ES')"
+                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                        Español
+                    </button>
+                    <button onclick="showFlag('flags/france.png', 'Français', 'FR')"
+                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                        Français
+                    </button>
+                    <button onclick="showFlag('flags/germany.png', 'Deutsch', 'DE')"
+                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                        Deutsch
+                    </button>
+                </div>
+
+                <!-- macOS Desktop Environment -->
+                <div class="macos-desktop">
+                    <!-- Demo Window Container -->
+                    <div id="flag-display" class="demo-window-container" aria-live="polite" aria-atomic="true">
+                    </div>
+
+                    <!-- macOS Dock -->
+                    <div class="macos-dock" aria-hidden="true">
+                        <div class="dock-icon" title="Finder">📁</div>
+                        <div class="dock-icon" title="Safari">🧭</div>
+                        <div class="dock-icon" title="Messages">💬</div>
+                        <div class="dock-icon" title="Mail">✉️</div>
+                        <div class="dock-icon" title="Calendar">📅</div>
+                        <div class="dock-icon active" title="LanguageFlag">
+                            <img src="app-icon.png" alt="LanguageFlag" width="56" height="56"
+                                style="width: 100%; height: 100%; border-radius: 12px;">
+                        </div>
+                        <div class="dock-icon" title="VS Code">💻</div>
+                        <div class="dock-icon" title="Slack">💼</div>
+                        <div class="dock-icon" title="Spotify">🎵</div>
+                        <div class="dock-icon" title="Settings">⚙️</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-16">
+                    Perfect For
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-8">
+                        <div class="text-4xl mb-4" aria-hidden="true">💻</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Developers</h3>
+                        <p class="text-gray-700">Switching between English for code and your native language for
+                            documentation? Never type in the wrong layout again.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl p-8">
+                        <div class="text-4xl mb-4" aria-hidden="true">📝</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Writers &amp; Translators</h3>
+                        <p class="text-gray-700">Working with multiple languages? Know exactly which layout is active before
+                            you start typing.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8">
+                        <div class="text-4xl mb-4" aria-hidden="true">🎓</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Students &amp; Teachers</h3>
+                        <p class="text-gray-700">Learning a new language? Keep track of your active keyboard while taking
+                            notes or practicing.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl p-8">
+                        <div class="text-4xl mb-4" aria-hidden="true">🌐</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Multilingual Users</h3>
+                        <p class="text-gray-700">Using 3+ languages daily? This is the tool you didn't know you needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download/CTA Section -->
+        <section id="download"
+            class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 to-indigo-600 text-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Ready to Never Miss Your Layout Again?
+                </h2>
+                <p class="text-xl md:text-2xl mb-12 opacity-90">
+                    Download LanguageFlag and transform your multilingual workflow
+                </p>
+
+                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 mb-8">
+                    <div class="text-6xl mb-6" aria-hidden="true">✨</div>
+                    <h3 class="text-3xl font-bold mb-4">Free Trial</h3>
+                    <p class="text-lg opacity-90 mb-6">Try all features for 14 days, no credit card required</p>
+                    <ul class="text-left max-w-md mx-auto mb-8 space-y-3">
+                        <li class="flex items-center">
+                            <span class="text-2xl mr-3" aria-hidden="true">✓</span>
+                            <span>All features unlocked</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-2xl mr-3" aria-hidden="true">✓</span>
+                            <span>Unlimited layouts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-2xl mr-3" aria-hidden="true">✓</span>
+                            <span>Full customization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-2xl mr-3" aria-hidden="true">✓</span>
+                            <span>Free updates</span>
+                        </li>
+                    </ul>
+                    <button
+                        class="bg-white text-purple-600 px-12 py-4 rounded-full text-lg font-bold hover:shadow-2xl transition transform hover:scale-105">
+                        Download Now
+                    </button>
+                    <p class="text-sm opacity-75 mt-4">macOS 12 Monterey or later</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-lg opacity-90 mb-2">One-time purchase after trial</p>
+                    <p class="text-5xl font-bold mb-2 price">$4.99</p>
+                    <p class="text-sm opacity-75">or pay what you want (min <span class="price">$2.99</span>)</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="app-icon.png" alt="LanguageFlag" width="24" height="24" loading="lazy" class="w-6 h-6 rounded">
+                        <span class="text-lg font-bold">LanguageFlag</span>
+                    </div>
+                    <p class="text-gray-300">Beautiful keyboard layout indicator for macOS</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#demo" class="hover:text-white transition">Demo</a></li>
+                        <li><a href="#download" class="hover:text-white transition">Download</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-300">
+                <p>&copy; 2026 LanguageFlag. Made with <span aria-hidden="true">❤️</span><span class="sr-only">love</span> for multilingual macOS users.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

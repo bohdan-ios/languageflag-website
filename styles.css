@@ -1,0 +1,354 @@
+/* Theme Colors */
+:root {
+    color-scheme: light;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f7;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-bg: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --window-bg: rgba(245, 245, 247, 0.88);
+    --window-border: rgba(0, 0, 0, 0.04);
+    --window-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-primary: #000000;
+    --bg-secondary: #1d1d1f;
+    --text-primary: #f5f5f7;
+    --text-secondary: #98989d;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-bg: #1d1d1f;
+    --nav-bg: rgba(20, 20, 20, 0.8);
+    --window-bg: rgba(30, 30, 30, 0.88);
+    --window-border: rgba(255, 255, 255, 0.1);
+    --window-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Auto detect system theme */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --bg-primary: #000000;
+        --bg-secondary: #1d1d1f;
+        --text-primary: #f5f5f7;
+        --text-secondary: #98989d;
+        --border-color: rgba(255, 255, 255, 0.1);
+        --card-bg: #1d1d1f;
+        --nav-bg: rgba(20, 20, 20, 0.8);
+        --window-bg: rgba(30, 30, 30, 0.88);
+        --window-border: rgba(255, 255, 255, 0.1);
+        --window-shadow: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: #667eea;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 9999;
+    border-radius: 0 0 8px 0;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Touch targets */
+button, a {
+    touch-action: manipulation;
+}
+
+/* Headings */
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
+/* Anchor scroll offset for fixed nav */
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.flag-demo {
+    animation: floatIn 2s ease-out infinite;
+}
+
+@keyframes floatIn {
+
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+}
+
+/* Realistic app window */
+.app-window {
+    width: 350px;
+    height: 217px;
+    background: var(--window-bg);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px var(--window-shadow), 0 0 1px var(--window-border);
+    border: 0.5px solid var(--window-border);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.app-window.animate-in {
+    animation: slideInFromBottom 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(60px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .flag-demo {
+        animation: none;
+    }
+
+    .app-window.animate-in {
+        animation: none;
+    }
+
+    .feature-card {
+        transition: none;
+    }
+
+    .feature-card:hover {
+        transform: none;
+    }
+
+    body {
+        transition: none;
+    }
+}
+
+.app-window .flag-icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    max-height: 85%;
+    max-width: 181px;
+    object-fit: contain;
+}
+
+.app-window .language-label {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    color: var(--text-secondary);
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--window-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--window-border);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px var(--window-shadow);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* macOS Desktop Environment */
+.macos-desktop {
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 10;
+    background-image: url('macos-wallpaper.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin: 0 auto;
+}
+
+/* macOS Dock */
+.macos-dock {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border-radius: 20px;
+    padding: 8px 16px;
+    display: flex;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dock-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.dock-icon:hover {
+    transform: translateY(-8px) scale(1.1);
+}
+
+.dock-icon.active {
+    position: relative;
+}
+
+.dock-icon.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.demo-window-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Price numerals */
+.price {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Tailwind overrides for dark theme */
+[data-theme="dark"] .bg-gray-50 {
+    background-color: var(--bg-primary) !important;
+}
+
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-white\/80 {
+    background-color: var(--nav-bg) !important;
+}
+
+/* Fix gradient backgrounds for dark theme */
+[data-theme="dark"] .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #1a1a2e, #16213e, #0f3460) !important;
+}
+
+/* Fix hero and demo sections */
+[data-theme="dark"] section {
+    background: var(--bg-primary) !important;
+}
+
+[data-theme="dark"] #demo {
+    background: var(--bg-primary) !important;
+}
+
+/* Fix text colors */
+[data-theme="dark"] .text-gray-900 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-gray-600,
+[data-theme="dark"] .text-gray-700 {
+    color: var(--text-secondary) !important;
+}
+
+/* Fix borders */
+[data-theme="dark"] .border-gray-200 {
+    border-color: var(--border-color) !important;
+}
+
+/* Fix buttons */
+[data-theme="dark"] button:not(.theme-toggle):not([class*="bg-gradient"]),
+[data-theme="dark"] .bg-white.text-gray-700 {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] button:hover:not(.theme-toggle) {
+    border-color: #8b5cf6 !important;
+}
+
+/* Fix feature cards */
+[data-theme="dark"] .feature-card {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+}
