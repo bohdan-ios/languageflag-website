@@ -124,6 +124,7 @@ section[id] {
 .app-window {
     width: 350px;
     height: 217px;
+    max-width: 90vw;
     background: var(--window-bg);
     backdrop-filter: blur(40px) saturate(180%);
     -webkit-backdrop-filter: blur(40px) saturate(180%);
@@ -181,9 +182,16 @@ section[id] {
     transform: translateX(-50%);
     width: auto;
     height: auto;
-    max-height: 85%;
-    max-width: 181px;
+    max-height: 80%;
+    max-width: 140px;
     object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    .app-window .flag-icon {
+        max-height: 85%;
+        max-width: 181px;
+    }
 }
 
 .app-window .language-label {
@@ -225,7 +233,8 @@ section[id] {
 .macos-desktop {
     width: 100%;
     max-width: 1200px;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 5;
+    min-height: 480px;
     background-image: url('macos-wallpaper.png');
     background-size: cover;
     background-position: center;
@@ -236,32 +245,56 @@ section[id] {
     margin: 0 auto;
 }
 
-/* macOS Dock */
-.macos-dock {
+@media (min-width: 768px) {
+    .macos-desktop {
+        aspect-ratio: 16 / 10;
+        min-height: auto;
+    }
+}
+
+/* macOS Dock wrapper for scrolling */
+.dock-wrapper {
     position: absolute;
     bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    display: flex;
+    justify-content: center;
+}
+
+.dock-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* macOS Dock */
+.macos-dock {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(40px) saturate(180%);
     -webkit-backdrop-filter: blur(40px) saturate(180%);
     border-radius: 20px;
-    padding: 8px 16px;
+    padding: 8px 12px;
     display: flex;
-    gap: 8px;
+    gap: 6px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: min-content;
 }
 
 .dock-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
+    font-size: 26px;
     transition: transform 0.2s ease;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .dock-icon:hover {
@@ -282,6 +315,24 @@ section[id] {
     height: 4px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+    .macos-dock {
+        padding: 8px 16px;
+        gap: 8px;
+    }
+    
+    .dock-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        font-size: 32px;
+    }
+    
+    .dock-icon.active::after {
+        bottom: -6px;
+    }
 }
 
 .demo-window-container {

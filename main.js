@@ -1,13 +1,13 @@
 // Language data for auto-switching
 const languages = [
-    { path: 'flags/ukraine.png', name: 'Українська', code: 'UA' },
     { path: 'flags/us.png', name: 'English', code: 'EN' },
-    { path: 'flags/france.png', name: 'Français', code: 'FR' },
+    { path: 'flags/ukraine.png', name: 'Українська', code: 'UA' },
     { path: 'flags/spain.png', name: 'Español', code: 'ES' },
+    { path: 'flags/france.png', name: 'Français', code: 'FR' },
     { path: 'flags/germany.png', name: 'Deutsch', code: 'DE' }
 ];
 
-let currentLanguageIndex = 1; // Start from English
+let currentLanguageIndex = 0; // Start from English
 let autoSwitchInterval = null;
 let userHasInteracted = false;
 

@@ -81,24 +81,29 @@
                 </p>
 
                 <!-- Visual Demo -->
-                <div class="flex justify-center items-center space-x-8 mb-12">
+                <div
+                    class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8 mb-12">
                     <div class="text-center">
-                        <div class="bg-white rounded-2xl shadow-2xl p-8 mb-4">
-                            <span class="text-7xl flag-demo" aria-hidden="true">🇺🇸</span>
+                        <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 mb-4">
+                            <span class="text-6xl md:text-7xl flag-demo" aria-hidden="true">🇺🇸</span>
                         </div>
                         <p class="text-sm text-gray-500">English</p>
                     </div>
-                    <div class="text-4xl text-gray-300" aria-hidden="true">→</div>
+                    <div class="hidden md:block text-4xl text-gray-300" aria-hidden="true">→</div>
+                    <div class="md:hidden text-4xl text-gray-300 transform rotate-90" aria-hidden="true">→</div>
                     <div class="text-center">
-                        <div class="bg-white rounded-2xl shadow-2xl p-8 mb-4">
-                            <span class="text-7xl flag-demo" style="animation-delay: 0.3s;" aria-hidden="true">🇺🇦</span>
+                        <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 mb-4">
+                            <span class="text-6xl md:text-7xl flag-demo" style="animation-delay: 0.3s;"
+                                aria-hidden="true">🇺🇦</span>
                         </div>
                         <p class="text-sm text-gray-500">Ukrainian</p>
                     </div>
-                    <div class="text-4xl text-gray-300" aria-hidden="true">→</div>
+                    <div class="hidden md:block text-4xl text-gray-300" aria-hidden="true">→</div>
+                    <div class="md:hidden text-4xl text-gray-300 transform rotate-90" aria-hidden="true">→</div>
                     <div class="text-center">
-                        <div class="bg-white rounded-2xl shadow-2xl p-8 mb-4">
-                            <span class="text-7xl flag-demo" style="animation-delay: 0.6s;" aria-hidden="true">🇪🇸</span>
+                        <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 mb-4">
+                            <span class="text-6xl md:text-7xl flag-demo" style="animation-delay: 0.6s;"
+                                aria-hidden="true">🇪🇸</span>
                         </div>
                         <p class="text-sm text-gray-500">Spanish</p>
                     </div>
@@ -134,7 +139,8 @@
                     <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
                         <div class="text-5xl mb-4" aria-hidden="true">👁️</div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Always Visible</h3>
-                        <p class="text-gray-600">See your active layout at a glance. Customizable position and size to fit
+                        <p class="text-gray-600">See your active layout at a glance. Customizable position and size to
+                            fit
                             your workflow.</p>
                     </div>
 
@@ -142,7 +148,8 @@
                     <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
                         <div class="text-5xl mb-4" aria-hidden="true">⚡</div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Lightning Fast</h3>
-                        <p class="text-gray-600">Instant updates when you switch layouts. Native macOS app with zero lag.
+                        <p class="text-gray-600">Instant updates when you switch layouts. Native macOS app with zero
+                            lag.
                         </p>
                     </div>
 
@@ -150,7 +157,8 @@
                     <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
                         <div class="text-5xl mb-4" aria-hidden="true">🎨</div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Highly Customizable</h3>
-                        <p class="text-gray-600">Choose display duration, position, size, and animations. Make it yours.</p>
+                        <p class="text-gray-600">Choose display duration, position, size, and animations. Make it yours.
+                        </p>
                     </div>
 
                     <!-- Feature 4 -->
@@ -173,7 +181,8 @@
                     <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
                         <div class="text-5xl mb-4" aria-hidden="true">🔒</div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Privacy First</h3>
-                        <p class="text-gray-600">No tracking, no analytics, no internet required. Your data stays on your
+                        <p class="text-gray-600">No tracking, no analytics, no internet required. Your data stays on
+                            your
                             Mac.</p>
                     </div>
                 </div>
@@ -202,6 +211,14 @@
                         class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
                         Español
                     </button>
+                    <button onclick="showFlag('flags/france.png', 'Français', 'FR')"
+                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                        Français
+                    </button>
+                    <button onclick="showFlag('flags/germany.png', 'Deutsch', 'DE')"
+                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                        Deutsch
+                    </button>
                 </div>
 
                 <!-- macOS Desktop Environment -->
@@ -211,20 +228,22 @@
                     </div>
 
                     <!-- macOS Dock -->
-                    <div class="macos-dock" aria-hidden="true">
-                        <div class="dock-icon" title="Finder">📁</div>
-                        <div class="dock-icon" title="Safari">🧭</div>
-                        <div class="dock-icon" title="Messages">💬</div>
-                        <div class="dock-icon" title="Mail">✉️</div>
-                        <div class="dock-icon" title="Calendar">📅</div>
-                        <div class="dock-icon active" title="LanguageFlag">
-                            <img src="app-icon.png" alt="LanguageFlag" width="56" height="56"
-                                style="width: 100%; height: 100%; border-radius: 12px;">
+                    <div class="dock-wrapper">
+                        <div class="macos-dock" aria-hidden="true">
+                            <div class="dock-icon" title="Finder">📁</div>
+                            <div class="dock-icon" title="Safari">🧭</div>
+                            <div class="dock-icon" title="Messages">💬</div>
+                            <div class="dock-icon" title="Mail">✉️</div>
+                            <div class="dock-icon" title="Calendar">📅</div>
+                            <div class="dock-icon active" title="LanguageFlag">
+                                <img src="app-icon.png" alt="LanguageFlag" width="56" height="56" class="dock-icon-img"
+                                    style="width: 100%; height: 100%; border-radius: 12px;">
+                            </div>
+                            <div class="dock-icon" title="VS Code">💻</div>
+                            <div class="dock-icon" title="Slack">💼</div>
+                            <div class="dock-icon" title="Spotify">🎵</div>
+                            <div class="dock-icon" title="Settings">⚙️</div>
                         </div>
-                        <div class="dock-icon" title="VS Code">💻</div>
-                        <div class="dock-icon" title="Slack">💼</div>
-                        <div class="dock-icon" title="Spotify">🎵</div>
-                        <div class="dock-icon" title="Settings">⚙️</div>
                     </div>
                 </div>
             </div>
@@ -248,21 +267,24 @@
                     <div class="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl p-8">
                         <div class="text-4xl mb-4" aria-hidden="true">📝</div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Writers &amp; Translators</h3>
-                        <p class="text-gray-700">Working with multiple languages? Know exactly which layout is active before
+                        <p class="text-gray-700">Working with multiple languages? Know exactly which layout is active
+                            before
                             you start typing.</p>
                     </div>
 
                     <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8">
                         <div class="text-4xl mb-4" aria-hidden="true">🎓</div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Students &amp; Teachers</h3>
-                        <p class="text-gray-700">Learning a new language? Keep track of your active keyboard while taking
+                        <p class="text-gray-700">Learning a new language? Keep track of your active keyboard while
+                            taking
                             notes or practicing.</p>
                     </div>
 
                     <div class="bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl p-8">
                         <div class="text-4xl mb-4" aria-hidden="true">🌐</div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Multilingual Users</h3>
-                        <p class="text-gray-700">Using 3+ languages daily? This is the tool you didn't know you needed.</p>
+                        <p class="text-gray-700">Using 3+ languages daily? This is the tool you didn't know you needed.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -322,7 +344,8 @@
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="app-icon.png" alt="LanguageFlag" width="24" height="24" loading="lazy" class="w-6 h-6 rounded">
+                        <img src="app-icon.png" alt="LanguageFlag" width="24" height="24" loading="lazy"
+                            class="w-6 h-6 rounded">
                         <span class="text-lg font-bold">LanguageFlag</span>
                     </div>
                     <p class="text-gray-300">Beautiful keyboard layout indicator for macOS</p>
@@ -345,7 +368,8 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-gray-300">
-                <p>&copy; 2026 LanguageFlag. Made with <span aria-hidden="true">❤️</span><span class="sr-only">love</span> for multilingual macOS users.</p>
+                <p>&copy; 2026 LanguageFlag. Made with <span aria-hidden="true">❤️</span><span
+                        class="sr-only">love</span> for multilingual macOS users.</p>
             </div>
         </div>
     </footer>
